@@ -5,8 +5,6 @@ fetch(urlSite)
 .then(data => tratarDadosMedalhas(data))
 
 
-
-
 let quadroMedalhas = document.querySelector(".quadro-medalhas")
 function criarTemplateLinha(colocacao,country,flag_url,medal_gold,medal_silver,medal_bronze){
     
@@ -49,44 +47,13 @@ function tratarDadosMedalhas(arrayPaises){
             pais.medal_bronze,
         )
     }
-
    
 }
 
 function ordenarPaises(arrayPaises){
-    let newArrayPaises = arrayPaises.map(somarTotal).sort((a,b) =>  b.medal_gold - a.medal_gold)
+    let newArrayPaises = arrayPaises.map((pais)=> pais).sort((a,b) =>  b.medal_gold - a.medal_gold)
     return newArrayPaises
 }
-
-function somarTotal(pais){
-
-    return  pais
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //FUNÇÃO QUE CRIA A COLUNA  RANK    
